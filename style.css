@@ -1,0 +1,70 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+.future-price {
+  margin-left: 1rem;
+  color: #888;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+input {
+  width: 28px;
+  height: 28px;
+}
+
+
+#submit-btn {
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+}
+
+#ordina {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#ordina:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+}
+
+#ordina:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#ordina:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}

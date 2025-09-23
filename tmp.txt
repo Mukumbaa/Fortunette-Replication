@@ -1,0 +1,44 @@
+export class Fortunette {
+  static instances = {};
+
+  constructor(element, options = {}) {
+    this.element = element;
+    this.options = {
+      hoverDelay: 300,
+      useDefaultStyle: true,
+      istanceName: '',
+      wrapperClassName: 'fortunette-wrapper',
+      feedforwardClassName: 'fortunette-feedforward',
+      feedforwardOffset: 2,
+      predictFutureState: () => { },
+      renderFeedforward: () => { },
+      onFeedforwardEnd: () => { },
+      onConfirm: () => { },
+      ...options
+    };
+
+    if (this.options.useDefaultStyle) {
+      Fortunette._injectDefaultStyles();
+    }
+
+    if (this.options.istanceName != '') {
+      Fortunette.instances[this.options.istanceName] = this;
+    }
+
+    this.hoverTimeout = null;
+    this._setupWrapper();
+    this._setupEvents();
+  }
+  static _injectDefaultStyles() {}
+  _setupWrapper() {}
+  _setupEvents() {}
+  _startFeedforward() {}
+  _stopFeedforward() {}
+  _confirmAction(event) {}
+  _positionFeedforward() {}
+
+  // Metodo per aggiornare le opzioni dinamicamente
+  updateOptions(newOptions) {
+    this.options = { ...this.options, ...newOptions };
+  }
+}

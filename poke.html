@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokè</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .div_choises {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Create your poké</h1>
+
+  <h2>Size (max 1)</h2>
+  <div id="sizes" class="div_choises">
+    <label><input type="checkbox" id="size-1">Small (9.90€)</input></label>
+    <label><input type="checkbox" id="size-2">Medium (11.90€)</input></label>
+    <label><input type="checkbox" id="size-3">Large (13.90€)</input></label>
+  </div>
+  <br>
+
+  <h2>Base (max 1)</h2>
+  <div id="bases" class="div_choises">
+    <label><input type="checkbox" id="base-1">Riso</input></label>
+    <label><input type="checkbox" id="base-2">Riso integrale</input></label>
+    <label><input type="checkbox" id="base-3">Insalata</input></label>
+  </div>
+  <br>
+
+  <h2 id="title-proteins">Proteins</h2>
+  <div id="proteins" class="div_choises">
+    <label><input type="checkbox" id="protein-1">Salmone</input></label>
+    <label><input type="checkbox" id="protein-2">Tonno</input></label>
+    <label><input type="checkbox" id="protein-3">Pollo</input></label>
+    <label><input type="checkbox" id="protein-4">Polpo</input></label>
+    <label><input type="checkbox" id="protein-5">Surimi</input></label>
+    <label><input type="checkbox" id="protein-6">Tempura di Gamberi</input></label>
+    <label><input type="checkbox" id="protein-7">Tofu</input></label>
+    <label><input type="checkbox" id="protein-8">Stracciatella</input></label>
+  </div>
+  <br>
+
+  <h2>Toppings (max 2)</h2>
+  <div id="toppings" class="div_choises">
+    <label><input type="checkbox" id="topping-1">Mandorle</input></label>
+    <label><input type="checkbox" id="topping-2">Cipolle</input></label>
+    <label><input type="checkbox" id="topping-3">wakame</input></label>
+    <label><input type="checkbox" id="topping-4">Olive nere</input></label>
+    <label><input type="checkbox" id="topping-5">Cipolla fritta</input></label>
+    <label><input type="checkbox" id="topping-6">Alghe nori</input></label>
+    <label><input type="checkbox" id="topping-7">Patate</input></label>
+  </div>
+  <br>
+
+  <h2>salse (max 2)</h2>
+  <div id="salse" class="div_choises">
+    <label><input type="checkbox" id="salsa-1">Shiracha</input></label>
+    <label><input type="checkbox" id="salsa-2">Majo</input></label>
+    <label><input type="checkbox" id="salsa-3">Soia</input></label>
+    <label><input type="checkbox" id="salsa-4">Teriyaki</input></label>
+    <label><input type="checkbox" id="salsa-5">Spicy majo</input></label>
+  </div>
+  <br>
+
+  <button id="ordina"></button>
+
+
+
+  <script type="module" src="./script_poke.js"></script>
+</body>
+
+</html>

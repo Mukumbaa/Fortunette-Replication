@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortunette Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Simple Checkbox</h1>
+  <input type="checkbox" id="simple_cbx" />
+  <h1>Terms Acceptance</h1>
+  <form id="my-form">
+    <label>
+      <input type="checkbox" id="agree" />
+    </label>
+    <button type="button" id="submit-btn" disabled>Submit</button>
+  </form>
+  <h1>Radio Checkboxes</h1>
+  <input type="checkbox" id='option1' />
+  <input type="checkbox" id='option2' />
+  <input type="checkbox" id='option3' />
+  <input type="checkbox" id='option4' />
+
+  <h1>Exclusive Checkboxes</h1>
+  <input type="checkbox" id='cbx1' />
+  <input type="checkbox" id='cbx2' />
+  <input type="checkbox" id='cbx3' />
+  <input type="checkbox" id='cbx4' />
+  <input type="checkbox" id='cbx5' />
+  <h6 id='textForCheck'></h6>
+  <br>
+  <h1>Selection Box</h1>
+  <select multiple size="5" style="width: 150px; height: 150px; font-size: 25px;">
+    <option id='choise1'>Volvo</option>
+    <option id='choise2'>Saab</option>
+    <option id='choise3'>Fiat</option>
+    <option id='choise4'>Audi</option>
+    <option id='choise5'>BMW</option>
+    <option id='choise6'>Mercedes</option>
+    <option id='choise7'>Peugeot</option>
+  </select>
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>

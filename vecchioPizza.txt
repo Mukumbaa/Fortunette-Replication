@@ -1,0 +1,70 @@
+
+    const toHex = (value) => value.toString(16).padStart(2, '0');
+
+    checkboxes.forEach(cb => {
+      new FortunetteToolkit.Fortunette(cb, {
+        hoverDelay: 100,
+        opacity: 0.2,
+        checkedColor: '#28a745',
+        unchekedColor: '#ba0013',
+        cantCheckColor: '#8f00ba',
+        feedforwardOffset: 4,
+        predictFutureState: (el) => {
+          const isChecked = el.checked;
+          const price = parseFloat(el.dataset.price);
+
+          if (getCurrentSelectedCount() > maxToppings) {
+            return {blocked: true, futurePrice: getTotalPrice()};
+          }
+
+          const futurePrice = isChecked
+            ? getTotalPrice() - price
+            : getTotalPrice() + price;
+
+          return {blocked: false, willBeChecked: !isChecked, futurePrice};
+        },
+
+        renderFeedforward: (layer, state, fortunetteInstance) => {
+          layer.classList.add('show');
+
+
+
+          layer.textContent = '';
+
+
+          futurePriceDisplay.textContent = `(→ €${state.futurePrice.toFixed(2)}`;
+
+
+          if (getCurrentSelectedCount() == maxToppings && state.willBeChecked) {
+            layer.style.borderColor = fortunetteInstance.options.cantCheckColor;
+            futurePriceDisplay.style.color = fortunetteInstance.options.cantCheckColor;
+            futurePriceDisplay.textContent = "!! " + futurePriceDisplay.textContent + ") !!";
+            layer.style.backgroundColor = fortunetteInstance.options.cantCheckColor + toHex(Math.round(fortunetteInstance.options.opacity * 255));
+          } else if (state.willBeChecked) {
+            layer.style.borderColor = fortunetteInstance.options.checkedColor;
+            futurePriceDisplay.textContent = futurePriceDisplay.textContent + ")↑";
+            futurePriceDisplay.style.color = fortunetteInstance.options.checkedColor;
+            layer.style.backgroundColor = fortunetteInstance.options.checkedColor + toHex(Math.round(fortunetteInstance.options.opacity * 255));
+          } else {
+            layer.style.borderColor = fortunetteInstance.options.unchekedColor;
+            futurePriceDisplay.textContent = futurePriceDisplay.textContent + ")↓";
+            futurePriceDisplay.style.color = fortunetteInstance.options.unchekedColor;
+            layer.style.backgroundColor = fortunetteInstance.options.unchekedColor + toHex(Math.round(fortunetteInstance.options.opacity * 255));
+          }
+        },
+
+        onFeedforwardEnd: () => {
+          futurePriceDisplay.textContent = '';
+        },
+        onConfirm: (el, state) => {
+          if (state.blocked) {
+            el.checked = false;
+            alert("You can only select up to 3 toppings.");
+            return;
+          }
+          setTimeout(() => {
+            updateTotalDisplay();
+          }, 0);
+        }
+      });
+    });
