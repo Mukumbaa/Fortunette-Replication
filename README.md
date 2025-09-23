@@ -1,20 +1,20 @@
-## Come visualizzare le pagine HTML
+## How to View HTML Pages
 
-Per aprire correttamente le pagine HTML, è necessario avviare un server locale Python.
+To properly open the HTML pages, you need to start a local Python server.
 
-### Istruzioni
+### Instructions
 
-1. Apri il terminale nella cartella principale del progetto.
-2. Esegui il seguente comando:
+1. Open the terminal in the project's root folder.
+2. Run the following command:
 
    ```bash
    python -m http.server 8000
    ```
 
-3. Apri il browser e vai all'indirizzo:
+3. Open your browser and go to:
 
    ```
-   http://localhost:8000/NOME-FILE.html
+   http://localhost:8000/FILE-NAME.html
    ```
 
-Sostituisci `NOME-FILE.html` con il nome del file HTML che desideri visualizzare.
+Replace `FILE-NAME.html` with the name of the HTML file you want to view.
