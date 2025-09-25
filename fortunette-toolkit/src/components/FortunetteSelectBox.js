@@ -85,7 +85,7 @@ export function FortunetteSelectBox(choises, groupName) {
       },
       
       onConfirm: (el, state, event, fortunetteInstance) => {
-        // Se il checkbox era già selezionato, non fare nulla (comportamento radio)
+        // Se il checkbox era già selezionato, non fare nulla
         if (state.selected) {
           event.preventDefault();
           return;

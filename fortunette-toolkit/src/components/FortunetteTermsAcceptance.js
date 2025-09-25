@@ -14,7 +14,7 @@ export function FortunetteTermsAcceptance(checkbox, button, termsText, groupName
   
   // const config = { ...defaultOptions, ...options };
   
-  // Inserisci il testo accanto al checkbox
+  // Inserisco il testo accanto al checkbox
   const textElement = document.createElement('span');
   textElement.textContent = termsText;
   textElement.style.marginLeft = defaultOptions.insertTextBefore ? '0' : '8px';
@@ -35,7 +35,7 @@ export function FortunetteTermsAcceptance(checkbox, button, termsText, groupName
     button.style.cursor = checkbox.checked ? 'pointer' : 'not-allowed';
   };
   
-  // Imposta stato iniziale
+  // Imposto stato iniziale
   updateButtonState();
   
   // Istanza Fortunette per il checkbox
@@ -68,7 +68,7 @@ export function FortunetteTermsAcceptance(checkbox, button, termsText, groupName
       }
     },
     onFeedforwardEnd: (fortunetteInstance) => {
-      // Nascondi feedforward del bottone
+      // Nascondo feedforward del bottone
       const buttonInstance = Fortunette.instances[`${groupName}_button`];
       if (buttonInstance) {
         buttonInstance.feedforwardLayer.classList.remove('show');
@@ -108,16 +108,12 @@ export function FortunetteTermsAcceptance(checkbox, button, termsText, groupName
       if (!checkbox.checked) {
         event.preventDefault();
         return false;
-      }
-      
-      // Qui puoi aggiungere la logica per quando il bottone viene cliccato
-      // Per ora non facciamo nulla, lasciamo che il bottone funzioni normalmente
+      }   
       return true;
     },
     ...defaultOptions,
   });
   
-  // Aggiungi click handler al testo per attivare il checkbox
   textElement.addEventListener('click', () => {
     checkbox.checked = !checkbox.checked;
     updateButtonState();

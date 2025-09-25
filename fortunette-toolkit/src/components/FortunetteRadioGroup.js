@@ -63,7 +63,7 @@ export function FortunetteRadioGroup(checkboxes, groupName) {
         });
       },
       onFeedforwardEnd: (fortunetteInstance) => {
-        // Nascondi il feedforward di tutti gli altri checkbox del gruppo
+        // Nascondo il feedforward di tutti gli altri checkbox del gruppo
         checkboxes.forEach((otherCheckbox, otherIndex) => {
           if (otherIndex !== index) {
             const otherInstanceName = `${groupName}_${otherIndex}`;
@@ -76,7 +76,7 @@ export function FortunetteRadioGroup(checkboxes, groupName) {
         });
       },
       onConfirm: (el, state, event, fortunetteInstance) => {
-        // Se il checkbox era già selezionato, non fare nulla (comportamento radio)
+        // Se il checkbox era già selezionato, non fare nulla
         if (state.checked) {
           event.preventDefault();
           return;
